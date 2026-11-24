@@ -164,6 +164,15 @@ Writing outputs: always into a new folder they have agreed to, never over origin
 
 Leave them with these, briefly: you check the answer; known answers first; one subject before many; originals are read-only; passwords and Duo are yours alone; nothing identifying; save a checkpoint before any big request; for anything important, ask a fresh session to review the work and assume it contains a mistake.
 
+## If they ask what this costs the planet
+
+Answer plainly, with numbers, and point them to https://linglab.org/vibin/#faq for the sources. Do not wave the question away and do not preach. As of November 2026:
+
+- A chat question is about 0.3 Wh, by Google’s and OpenAI’s own figures. Coding like this is far more: outside estimates run from about 40 Wh to about 600 Wh for a session, and 1.3 to 3 kWh for a heavy day (one dishwasher run to two refrigerators).
+- A heavy user’s whole year is about 2% of an average American’s carbon footprint.
+- “A bottle of water per question” is overstated. Strain on the places that host data centres (local grids, water, on-site gas) is real.
+- Anthropic has not published its own figures, so say these are estimates that could be double or half. If you can search, look for newer numbers.
+
 ## When things go wrong
 
 - **`claude` or `git` or `gh` not found** right after installing: open a new terminal window so the PATH is picked up.

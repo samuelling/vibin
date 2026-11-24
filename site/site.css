@@ -165,6 +165,10 @@ figure { margin: 0; }
 .rules { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
 .rules li { padding: 14px 16px; background: var(--sheet); border: 1px solid var(--rule); max-width: none; }
 .rules b { font: 900 1.4rem/1.05 var(--display); text-transform: uppercase; display: block; margin-bottom: 5px; }
+.claims b { text-wrap: balance; }
+.verdict { display: inline-block; font: 700 .7rem/1 var(--type); letter-spacing: .12em; text-transform: uppercase; padding: 5px 7px 3px; border: 1.5px solid var(--grape); color: var(--grape); margin: 0 0 9px; transform: rotate(-1.5deg); }
+.verdict.yes { background: var(--lime); border-color: var(--lime); color: var(--on-lime); }
+.claims .src { font: 400 .8rem/1.5 var(--type); color: var(--muted); margin: 9px 0 0; max-width: none; }
 .words { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 0 28px; margin: 16px 0 0; padding: 0; border-top: 2px solid var(--toner); }
 .words div { padding: 12px 0; border-bottom: 1px solid var(--rule); }
 .words dt { font: 900 1.4rem/1 var(--display); text-transform: uppercase; }

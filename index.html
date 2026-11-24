@@ -94,6 +94,7 @@
     <li><a href="#stuck"><span class="n">·</span>When stuck</a></li>
     <li><a href="#kit"><span class="n">·</span>The kit</a></li>
     <li><a href="#words"><span class="n">·</span>Words</a></li>
+    <li><a href="#faq"><span class="n">·</span>Fair questions</a></li>
   </ol>
 </nav>
 
@@ -364,6 +365,31 @@ claude</pre></div>
     <div><dt>Array job</dt><dd>One work order run many times at once, say once per subject.</dd></div>
     <div><dt>Module</dt><dd>Software already installed on the cluster. <code>module load python3</code> switches it on.</dd></div>
   </dl>
+</section>
+
+<section id="faq">
+  <h2><span class="num">The FAQ</span>Fair questions</h2>
+  <p class="for">Worth asking before you lean on this. Straight answers, with the sources.</p>
+
+  <h3>What does this cost the planet?</h3>
+  <p>Electricity, mostly. Plus some water to keep the machines cool, and the carbon from making the power. The cost is real. Some of what you hear about it is true, some is too scary, and some is too calm.</p>
+  <p>One unit first. A <strong>watt-hour</strong> (Wh) is a small amount of electricity: a 10-watt LED bulb uses one every six minutes. A thousand of them make a kilowatt-hour (kWh), the unit on your electric bill.</p>
+  <ul class="rules claims">
+    <li><span class="verdict yes">True</span><b>“A chat message costs almost nothing”</b>Google measured its own chatbot: 0.24 Wh for a typical question. That is about nine seconds of TV, and five drops of water. OpenAI gives 0.34 Wh. These are the companies’ own numbers, and nobody outside has checked them.
+      <p class="src"><a href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference">Google’s measurement</a> · <a href="https://ourworldindata.org/how-much-energy-do-data-centers-and-artificial-intelligence-use">Our World in Data</a></p></li>
+    <li><span class="verdict">Too calm</span><b>“So coding with Claude costs almost nothing”</b>Coding is not chatting. One thing you type can set off a dozen rounds of reading, writing and running. A climate scientist logged eight weeks of his own heavy use: 1,138 typed requests became more than 14,000 calls to the model. Two people who measured their own use got about 40 Wh and about 600 Wh for a typical session. For a full day, about 1.3 kWh (one extra dishwasher run) and 3 kWh (two refrigerators).
+      <p class="src"><a href="https://simonpcouch.com/blog/2026-01-20-cc-impact/">The lighter user’s sums</a> · <a href="https://www.theclimatebrink.com/p/the-real-energy-use-of-agentic-ai">The heavier user’s log</a></p></li>
+    <li><span class="verdict">Overstated</span><b>“Every question drinks a bottle of water”</b>That number comes from a 2024 news story built on worst-case guesses. Most of the water in it is used at power plants, not at the data centre. Measured at the data centre, a chat question is about five drops. A coding session uses more, because it uses more electricity.
+      <p class="src"><a href="https://www.verysane.ai/p/the-biggest-statistic-about-ai-water">How the bottle figure was built</a> · <a href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference">Google’s measurement</a></p></li>
+    <li><span class="verdict">Overstated</span><b>“My using it wrecks the climate”</b>That heavy user puts his whole year at about 1,100 kWh. That is a tenth of what a US home uses, about half of one round-trip flight across the country, and about 2% of an average American’s carbon footprint. Not nothing. Less than one long flight, and far less than a year of driving.
+      <p class="src"><a href="https://www.theclimatebrink.com/p/the-real-energy-use-of-agentic-ai">The heavier user’s log</a></p></li>
+    <li><span class="verdict">Overstated, so far</span><b>“AI is eating the world’s electricity”</b>All the world’s data centres together use about 1.5% of its electricity. AI is about a third of that. The International Energy Agency expects data centres to reach about 3% by 2030, and forecasts that far out are shaky.
+      <p class="src"><a href="https://ourworldindata.org/how-much-energy-do-data-centers-and-artificial-intelligence-use">Our World in Data</a> · <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary">International Energy Agency</a></p></li>
+    <li><span class="verdict yes">True</span><b>“It’s hard on the places that host it”</b>The world average hides the clumps. Data centres take more than a fifth of Ireland’s electricity and more than a quarter of Virginia’s. A big one can use millions of gallons of water a day, and most new ones are going up where water is already short. Some run their own gas turbines. Electric bills depend on the place: one national study finds no rise on average, but a tight local grid can feel it.
+      <p class="src"><a href="https://ourworldindata.org/how-much-energy-do-data-centers-and-artificial-intelligence-use">Our World in Data</a> · <a href="https://www.consumerreports.org/data-centers/ai-data-centers-impact-on-electric-bills-water-and-more-a1040338678/">Consumer Reports</a> · <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary">International Energy Agency</a> · <a href="https://arxiv.org/abs/2606.19777">The bills study</a></p></li>
+  </ul>
+  <div class="note"><b>How sure is this</b>Anthropic, the company that makes Claude, has not published its own energy numbers. So every Claude figure here is an outside estimate, and the real number could be double or half. Checked November 2026. These numbers move fast.</div>
+  <div class="note"><b>What helps</b>Say clearly what you want, so it takes fewer rounds. Stop a run that is going in circles (see <a href="#stuck">When stuck</a>). The biggest lever is not you, though. It is what powers the grid: on clean power, the same work has about a tenth of the carbon.</div>
 </section>
 
 </article>
