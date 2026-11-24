@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>vibin’ · you describe it, Claude types it</title>
+<meta name="description" content="A step-by-step way into coding with Claude, for scientists who have never done it: a first demo, save points with git, a page online, your own data, and jobs on BU's SCC.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2217.5%22 cy=%2217.5%22 r=%2212%22 fill=%22%23B4E51A%22/%3E%3Ccircle cx=%2215%22 cy=%2215%22 r=%2212%22 fill=%22%235B34D6%22/%3E%3Cpath d=%22M7 15c2.7-7 5.3-7 8 0s5.3 7 8 0%22 fill=%22none%22 stroke=%22%23F3F0E8%22 stroke-width=%222.6%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Courier+Prime:wght@400;700&family=Spline+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="site/site.css">
+</head>
+<body>
+
+<header class="wrap mast">
+  <div class="kicker"><span>vibin’</span><span>A way in</span><span>For scientists</span><span class="r"><a href="#kit">The kit</a> · <a href="VIBIN.md">For your Claude</a> · <a href="https://github.com/samuelling/vibin">Source</a></span></div>
+  <h1 class="logo" aria-label="vibin’">
+    <span class="ink" aria-hidden="true"><i style="--k:0">V</i><i style="--k:1">I</i><i style="--k:2">B</i><i style="--k:3">I</i><i style="--k:4">N</i><i class="apos" style="--k:5">’</i></span>
+    <span class="mis" aria-hidden="true"><i style="--k:0">V</i><i style="--k:1">I</i><i style="--k:2">B</i><i style="--k:3">I</i><i style="--k:4">N</i><i style="--k:5">’</i></span>
+  </h1>
+  <svg class="wave" viewBox="0 0 720 34" preserveAspectRatio="none" aria-hidden="true"><path class="run" d="M0 17 q20 -26 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/></svg>
+  <p class="lede">You describe it. <em>Claude types it.</em> A step-by-step way in, for people who have never written code this way, or at all.</p>
+  <div class="mast-links">
+    <a class="btn big primary" href="#s1">Start at step 1</a>
+    <a class="btn big" href="#short">Or hand this page to your Claude</a>
+  </div>
+</header>
+
+<main>
+<section class="wrap" id="idea">
+  <div class="sect">
+    <h2><span class="num">Before anything</span>The idea</h2>
+    <p class="sub">Coding with Claude is a conversation with three moves. You already know how to do all three.</p>
+  </div>
+  <div class="board">
+    <article class="clip" style="--tilt:-.6deg">
+      <span class="step" aria-hidden="true">1</span>
+      <span class="kind">Ask</span>
+      <svg class="pic" viewBox="0 0 300 120" aria-hidden="true"><rect x="18" y="16" width="196" height="64" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M52 80v22l24-22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M36 38h160M36 56h110" stroke="var(--grape)" stroke-width="5" stroke-linecap="round"/><circle cx="252" cy="48" r="22" fill="var(--lime)"/><circle cx="248" cy="44" r="22" fill="var(--grape)"/></svg>
+      <h3>Say what you want to see</h3>
+      <p>Not how to build it. “A plot of response against contrast, one line per condition.” The way you’d ask a new postdoc.</p>
+    </article>
+    <article class="clip" style="--tilt:.5deg;--tape:2deg">
+      <span class="step" aria-hidden="true">2</span>
+      <span class="kind">Look</span>
+      <svg class="pic" viewBox="0 0 300 120" aria-hidden="true"><rect x="40" y="14" width="220" height="92" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M40 32h220" stroke="currentColor" stroke-width="2.5"/><path d="M60 92 C100 92 110 46 150 46 S 210 52 240 44" fill="none" stroke="var(--grape)" stroke-width="4" stroke-linecap="round"/><path d="M60 96 C110 96 130 70 170 68 S 220 66 240 64" fill="none" stroke="var(--lime)" stroke-width="4" stroke-linecap="round"/></svg>
+      <h3>Look at what came back</h3>
+      <p>Open the page. Read the figure. Check the numbers. You are the one who knows whether it’s right.</p>
+    </article>
+    <article class="clip" style="--tilt:-.3deg;--tape:-5deg">
+      <span class="step" aria-hidden="true">3</span>
+      <span class="kind">Steer</span>
+      <svg class="pic" viewBox="0 0 300 120" aria-hidden="true"><path d="M30 94 C90 94 100 30 160 30 S 230 60 262 26" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round"/><path d="M262 26l-18 2M262 26l-4 18" stroke="var(--grape)" stroke-width="4" stroke-linecap="round"/><circle cx="160" cy="30" r="9" fill="var(--lime)"/><circle cx="30" cy="94" r="9" fill="var(--grape)"/></svg>
+      <h3>Say what’s off</h3>
+      <p>“The axis should be log.” “Subject 4 looks wrong, why?” Then round again. Most of the work is this third move.</p>
+    </article>
+  </div>
+  <div class="analogy">
+    <blockquote class="say-it"><b>Think: a fast new postdoc</b>Claude is like a very quick, very well-read postdoc sitting at your keyboard. It types, runs things, reads the errors, and fixes them. It doesn’t know your science or your data until you tell it, and it can be confidently wrong. So you stay the PI: you set the question and you check the answer.</blockquote>
+    <blockquote class="say-it"><b>You don’t learn the tools first</b>Git, the terminal, the cluster’s job system: you learn those the way you learned the copier, by needing them once with someone beside you. Here that someone is Claude. Every confusing step below is a thing you can ask it to do, and to explain as it goes.</blockquote>
+  </div>
+</section>
+
+<section class="wrap" id="short">
+  <div class="sect">
+    <h2><span class="num">If you’d rather not read</span>The short way</h2>
+  </div>
+  <div class="short">
+    <h3>Hand this page to your Claude</h3>
+    <p>This whole guide also exists as one file written for Claude to read. Do <a href="#s1">step 1</a> (ten minutes, mostly clicking), then paste this. Claude will walk you through everything below, one step at a time, doing the typing itself.</p>
+    <div class="say"><pre class="prompt" data-title="The short way">Read https://linglab.org/vibin/VIBIN.md and be my guide through it. I’m new to this. Start at step 2, go one step at a time, and wait for me before moving on.</pre></div>
+    <p class="small">The rest of this page is the same route, written for you. Dashed boxes are things to say to Claude. Dark boxes are the few things only you can type.</p>
+  </div>
+</section>
+
+<div class="wrap docs">
+<nav class="toc" aria-label="Steps">
+  <h2>The route</h2>
+  <ol>
+    <li><a href="#s1"><span class="n">1</span>Set up</a></li>
+    <li><a href="#s2"><span class="n">2</span>First demo</a></li>
+    <li><a href="#s3"><span class="n">3</span>The loop</a></li>
+    <li><a href="#s4"><span class="n">4</span>Save points</a></li>
+    <li><a href="#s5"><span class="n">5</span>Put it online</a></li>
+    <li><a href="#s6"><span class="n">6</span>Your own data</a></li>
+    <li><a href="#s7"><span class="n">7</span>The SCC door</a></li>
+    <li><a href="#s8"><span class="n">8</span>A first job</a></li>
+    <li><a href="#s9"><span class="n">9</span>A whole analysis</a></li>
+    <li><a href="#s10"><span class="n">10</span>Your question</a></li>
+    <li class="gap" aria-hidden="true"></li>
+    <li><a href="#rules"><span class="n">·</span>House rules</a></li>
+    <li><a href="#stuck"><span class="n">·</span>When stuck</a></li>
+    <li><a href="#kit"><span class="n">·</span>The kit</a></li>
+    <li><a href="#words"><span class="n">·</span>Words</a></li>
+  </ol>
+</nav>
+
+<article class="doc">
+
+<section id="s1">
+  <h2><span class="num">Step 1 · ten minutes</span>Set up</h2>
+  <p class="for">You need a computer and a paid Claude plan (Pro, Max, Team or Enterprise). Nothing else. No coding tools to install first.</p>
+  <ol class="steps">
+    <li><b>Get the Claude desktop app</b>
+      <p>Download it for Mac or Windows from the <a href="https://code.claude.com/docs/en/desktop-quickstart">desktop quickstart</a>, open it, and sign in.</p></li>
+    <li><b>Click the Code tab</b>
+      <p>It’s at the top of the sidebar. Chat is where Claude talks. <b>Code</b> is where Claude can also <i>do</i>: make files, run them, fix them. That’s the whole difference.</p></li>
+    <li><b>Give it a folder</b>
+      <p>Make an empty folder somewhere easy, like <code>Documents/vibin-practice</code>. Under the prompt box, pick <b>Local</b>, then <b>Open folder…</b>, and choose it. Claude works inside this folder. Think of it as the bench you’ve cleared for it.</p></li>
+    <li><b>Leave it asking permission</b>
+      <p>Also under the prompt box is a mode switch. Start on <b>Manual</b>: Claude asks before it changes a file or runs a command. Read what it asks and say yes. It’s the fastest way to learn what’s going on. When the asking gets tedious, switch to <b>Accept edits</b>.</p></li>
+  </ol>
+  <details><summary>I’d rather use the terminal</summary><div>
+    <p>Same Claude, in a terminal window. On a Mac, open Terminal and paste:</p>
+    <div class="type"><pre class="code">curl -fsSL https://claude.ai/install.sh | bash</pre></div>
+    <p>On Windows, in PowerShell: <code>irm https://claude.ai/install.ps1 | iex</code>. Then open a new terminal window, go to your folder, and start it:</p>
+    <div class="type"><pre class="code">mkdir -p ~/Documents/vibin-practice
+cd ~/Documents/vibin-practice
+claude</pre></div>
+    <p>It asks you to sign in the first time. Everything below works the same way.</p>
+  </div></details>
+  <div class="have"><p><b>You now have</b>Claude, looking at an empty folder, waiting.</p><button class="tick" data-step="s1" aria-pressed="false">☐ Done</button></div>
+</section>
+
+<section id="s2">
+  <h2><span class="num">Step 2 · five minutes</span>First demo</h2>
+  <p class="for">Make something you can see. One file, opens in a browser, nothing to install.</p>
+  <div class="say"><pre class="prompt" data-title="Step 2: first demo">Make me a single web page called gabor.html that shows a Gabor patch on a gray background, with sliders for contrast, spatial frequency, orientation and size. No libraries, just the one file. Then open it in my browser.</pre></div>
+  <p>Say yes when it asks. A minute later you have something like this. It’s live, so move the sliders:</p>
+  <figure class="demo">
+    <iframe src="kit/first-demo.html" title="A Gabor patch with sliders for contrast, stripes, tilt and size" loading="lazy"></iframe>
+    <figcaption>Yours won’t look identical. That’s fine: it’s yours, and you can change it.</figcaption>
+  </figure>
+  <p class="then">Now change it. Pick one, or make up your own:</p>
+  <ul class="more">
+    <li data-title="Step 2: change it">Make it drift, and add a slider for speed.</li>
+    <li data-title="Step 2: change it">Add a second patch next to it. Let me press the left or right arrow to say which one has higher contrast, and keep score.</li>
+    <li data-title="Step 2: change it">The sliders are too small. Make everything bigger and easier to read.</li>
+  </ul>
+  <div class="note"><b>Not a vision person?</b>Swap the first prompt for anything you can picture: a Stroop task, a reaction-time game, a calculator for your grant budget. The rule is only that it’s one page you can look at.</div>
+  <div class="have"><p><b>You now have</b>A working thing you made by describing it, and changed by describing it again.</p><button class="tick" data-step="s2" aria-pressed="false">☐ Done</button></div>
+</section>
+
+<section id="s3">
+  <h2><span class="num">Step 3 · a habit, not a task</span>The loop</h2>
+  <p class="for">Ask, look, steer. You just did it. These make it go better.</p>
+  <ul class="rules">
+    <li><b>Describe the result</b>Say what you want to see or get, and how you’d know it’s right. Leave the how to Claude.</li>
+    <li><b>Give it what you’d give a student</b>The file, the paper’s method, an example of the figure you like. Context is most of the quality.</li>
+    <li><b>Paste the mess</b>When something breaks, paste the error or say exactly what you see. Don’t tidy it up or guess the cause.</li>
+    <li><b>Small bites</b>One change, look, next change. Ten small rounds beat one giant request.</li>
+    <li><b>Ask why</b>You’re allowed to not understand. Ask, every time. It never gets tired of it.</li>
+    <li><b>Start fresh when it’s muddled</b>A long conversation gets foggy. Open a new session and say where things stand.</li>
+  </ul>
+  <h3>Three to keep in your pocket</h3>
+  <ul class="more">
+    <li data-title="Step 3: the loop">Explain what you just built, like I’m a new grad student. Which file does what?</li>
+    <li data-title="Step 3: the loop">Before you build anything, tell me your plan in five lines and wait for my OK.</li>
+    <li data-title="Step 3: the loop">That’s not right. Here’s what I see: <mark>[describe it, or paste the error]</mark>. What are the likely causes? Check them before changing anything.</li>
+  </ul>
+  <div class="have"><p><b>You now have</b>The whole method. Everything after this is the same loop pointed at bigger things.</p><button class="tick" data-step="s3" aria-pressed="false">☐ Done</button></div>
+</section>
+
+<section id="s4">
+  <h2><span class="num">Step 4 · ten minutes</span>Save points</h2>
+  <p class="for">Git, without learning git.</p>
+  <p><b>Git is save points in a video game.</b> Before the boss fight you save. If it goes badly, you go back. Each save has a note saying what you’d just done, so the saves are also a lab notebook that writes itself. Git has a reputation because its commands are strange. You won’t be typing them.</p>
+  <div class="say"><pre class="prompt" data-title="Step 4: set up git">I’ve never used git. Set it up for this folder: check that git is installed (help me install it if it isn’t), set my name and email, and save a first checkpoint. Tell me in one sentence what each thing you do is for.</pre></div>
+  <p class="then">From then on, this is all of git you need to say:</p>
+  <ul class="more">
+    <li data-title="Step 4: everyday git">Save a checkpoint.</li>
+    <li data-title="Step 4: everyday git">What’s changed since the last checkpoint?</li>
+    <li data-title="Step 4: everyday git">I don’t like where this went. Take me back to the last checkpoint.</li>
+    <li data-title="Step 4: everyday git">Show me the history as a short list.</li>
+  </ul>
+  <div class="note"><b>The habit</b>Save a checkpoint whenever something works, and before you ask for anything big. Then nothing Claude does can cost you more than a few minutes.</div>
+  <div class="have"><p><b>You now have</b>An undo button for the whole folder, and a record of what you did.</p><button class="tick" data-step="s4" aria-pressed="false">☐ Done</button></div>
+</section>
+
+<section id="s5">
+  <h2><span class="num">Step 5 · fifteen minutes</span>Put it online</h2>
+  <p class="for">A link you can send to a colleague.</p>
+  <p><b>GitHub is where the save points live when they’re not on your laptop.</b> A copy off-site, like Dropbox for the notebook. It can also show a web page to the world, for free. That part is called Pages.</p>
+  <ol class="steps">
+    <li><b>Make a GitHub account</b>
+      <p>Go to <a href="https://github.com/signup">github.com/signup</a>. This one is yours to do: it’s your name and your password.</p></li>
+    <li><b>Let Claude do the rest</b>
+      <div class="say"><pre class="prompt" data-title="Step 5: put it online">I have a GitHub account, username <mark>[yours]</mark>. Connect this computer to it: install the GitHub command-line tool (gh) if it’s missing and walk me through signing in. I’ll do the browser part myself. Then make a new public repo called gabor-demo from this folder, push it, and turn on GitHub Pages so I get a link I can send to someone. Rename gabor.html to index.html if the link needs that.</pre></div>
+      <p>At one point it hands you a short code to type into a GitHub page in your browser. That’s you proving it’s you. After that it won’t ask again.</p></li>
+    <li><b>Send the link to someone</b>
+      <p>It looks like <code>https://<mark>yourname</mark>.github.io/gabor-demo/</code> and takes a minute or two to appear the first time. From now on “save a checkpoint and push it” updates the page.</p></li>
+  </ol>
+  <div class="note warn"><b>Public means public</b>Anyone can read a public repo. Demos and code: fine. Data, never. For work that isn’t ready, ask for a <i>private</i> repo instead.</div>
+  <div class="have"><p><b>You now have</b>Your demo on the internet, and your work backed up somewhere that isn’t your laptop.</p><button class="tick" data-step="s5" aria-pressed="false">☐ Done</button></div>
+</section>
+
+<section id="s6">
+  <h2><span class="num">Step 6 · twenty minutes</span>Your own data</h2>
+  <p class="for">On your laptop first. Something small: a spreadsheet, a CSV, one subject’s behavior.</p>
+  <ol class="steps">
+    <li><b>Put a copy in the folder</b>
+      <p>Make a <code>data</code> folder inside your practice folder and drop a <i>copy</i> of a file in it. Nothing with names or birth dates in it. No data handy? Skip to the note below.</p></li>
+    <li><b>Have Claude look before it touches</b>
+      <div class="say"><pre class="prompt" data-title="Step 6: look at the data">There’s a file in data/. Don’t change it. Look at it and tell me what’s in it: the columns, how many rows, and anything odd, like missing values or ranges that don’t make sense. Then stop.</pre></div>
+      <p>Read what it says. This is where you catch that column 3 is in milliseconds, not seconds.</p></li>
+    <li><b>Ask for a script, not an answer</b>
+      <div class="say"><pre class="prompt" data-title="Step 6: first analysis">Write a Python script that reads that file and plots <mark>[what you want: say, mean response for each condition, with error bars across subjects]</mark>. Save the figure in figures/. Print the numbers behind the figure so I can check them. Then run it and show me the figure.</pre></div>
+      <p>A script is a recipe card: anyone can run it again and get the same figure. An answer in the chat is a meal you can’t remake.</p></li>
+    <li><b>Check it like a reviewer</b>
+      <div class="say"><pre class="prompt" data-title="Step 6: check it">What assumptions did you make in that analysis? List them. Then tell me one way I could check the result by hand.</pre></div></li>
+    <li><b>Save a checkpoint</b>
+      <p>You know how.</p></li>
+  </ol>
+  <div class="note"><b>No data handy?</b>The <a href="#kit">kit</a> has a practice set. Say: “Download https://linglab.org/vibin/vibin-kit.zip, unzip it here, and run make_toy_data.py.” You get eight made-up subjects: responses at seven contrasts, attended and unattended.</div>
+  <div class="have"><p><b>You now have</b>A figure from your own data, the script that makes it, and both saved.</p><button class="tick" data-step="s6" aria-pressed="false">☐ Done</button></div>
+</section>
+
+<section id="s7">
+  <h2><span class="num">Step 7 · fifteen minutes</span>The SCC door</h2>
+  <p class="for">For people with an account on BU’s Shared Computing Cluster. No account? A faculty member starts a project, or the lead of an existing one adds you: see <a href="https://www.bu.edu/tech/support/research/account-management/">Accessing the SCC</a>.</p>
+  <p><b>Your laptop is your office. The SCC is the big shared workshop across the state</b> (it really is: the machines are in Holyoke). You don’t move in. You send work orders and get results back. Claude stays on your laptop and reaches the workshop through a door that <i>you</i> open.</p>
+  <p>The door is a secure connection called SSH. Normally every trip through it means your password and a Duo tap. The trick is to badge in once and prop the door open, so everything after that walks straight through.</p>
+  <ol class="steps">
+    <li><b>Have Claude build the door</b>
+      <div class="say"><pre class="prompt" data-title="Step 7: build the door">I have an account on BU’s SCC. My login name is <mark>[yours]</mark>. Set up the file ~/.ssh/config on this computer so that “ssh scc” connects to scc1.bu.edu and keeps one shared connection open for 12 hours (ControlMaster), so I only log in once a day. Back up my existing config first. Don’t try to log in for me: tell me the one command to run, and I’ll type my password and approve Duo myself.</pre></div></li>
+    <li><b>Open it yourself</b>
+      <p>In the desktop app, open the terminal pane (<kbd>Ctrl</kbd>+<kbd>`</kbd>), or use the Terminal app. Type this, then your BU password, then approve Duo on your phone:</p>
+      <div class="type"><pre class="code">ssh -fN scc</pre></div>
+      <p>Nothing visible happens. That’s success: the door is open and stays open. Do this once each morning you want to use the cluster.</p></li>
+    <li><b>Have Claude look around</b>
+      <div class="say"><pre class="prompt" data-title="Step 7: look around">Check that my SCC connection is open (ssh -O check scc). Then look around, read-only: where is my home directory, which projects am I in, where is my project space, and how full is it? Change nothing.</pre></div></li>
+    <li><b>Write down the rules</b>
+      <div class="say"><pre class="prompt" data-title="Step 7: ground rules">Download https://linglab.org/vibin/kit/CLAUDE-starter.md. Fill in what you just learned about my SCC setup, ask me about anything you can’t work out, and save it as CLAUDE.md in this folder.</pre></div>
+      <p>Claude reads <code>CLAUDE.md</code> every time it starts in this folder. It’s the note taped above the bench: ask before submitting jobs, never delete, never touch my password. <a href="kit/CLAUDE-starter.md">Read the starter</a> and change it to suit you.</p></li>
+  </ol>
+  <div class="note warn"><b>Two things Claude never does</b>Type your password, or approve Duo. If it ever seems to need either, the door has closed: open it again yourself.</div>
+  <details><summary>On Windows</summary><div><p>The prop-the-door-open trick needs Mac or Linux. On Windows, do this step inside WSL (the Linux that comes with Windows). Tell Claude you’re on Windows and ask it to set that up with you.</p></div></details>
+  <div class="have"><p><b>You now have</b>Claude able to see your cluster files, on a connection you opened and can close.</p><button class="tick" data-step="s7" aria-pressed="false">☐ Done</button></div>
+</section>
+
+<section id="s8">
+  <h2><span class="num">Step 8 · ten minutes</span>A first job</h2>
+  <p class="for">Send one small work order and watch it come back.</p>
+  <p>When you log in to the SCC you’re at the <b>front desk</b> (the login node): fine for looking around and dropping off orders, not for running the machines. Real work goes in as a <b>batch job</b>: a short script that says what to run and how much time it needs. You hand it to the scheduler with <code>qsub</code>, it waits in line, runs on a machine in the back, and leaves its output in a file.</p>
+  <div class="say"><pre class="prompt" data-title="Step 8: first job">Download https://linglab.org/vibin/kit/hello.qsub. Put it in a new folder called vibin-practice in my project space on the SCC, fill in my project name, and submit it. Watch the queue until it finishes, then show me what it printed. Explain qsub, qstat and the output file in one sentence each.</pre></div>
+  <p>Since your ground rules say to ask before submitting, it will ask. Say yes. You get back a line like <code>Hello from scc-xx1 at Tue Nov 24…</code>: a machine you’ve never seen, saying hi.</p>
+  <div class="have"><p><b>You now have</b>The full round trip: laptop to cluster to laptop. Every analysis from here is this, with a bigger script.</p><button class="tick" data-step="s8" aria-pressed="false">☐ Done</button></div>
+</section>
+
+<section id="s9">
+  <h2><span class="num">Step 9 · thirty minutes</span>A whole analysis</h2>
+  <p class="for">A rehearsal on made-up data, where the right answer is known. Same shape as the real thing: one subject, check, everyone, gather.</p>
+  <p>The kit’s practice set is eight invented subjects with a contrast response function that attention shifts to the left. Because the data are invented, the truth is on file, and you can see whether the analysis finds it. <b>It’s the fire drill before the fire.</b></p>
+  <ol class="steps">
+    <li><b>Set the table</b>
+      <div class="say"><pre class="prompt" data-title="Step 9: set up the practice analysis">Download https://linglab.org/vibin/vibin-kit.zip and unzip it here. Read the three Python files and the two .qsub files and tell me in plain words what each one does. Then copy them to my vibin-practice folder on the SCC and run make_toy_data.py there.</pre></div></li>
+    <li><b>One subject first</b>
+      <div class="say"><pre class="prompt" data-title="Step 9: one subject">Fill in my project name in analysis.qsub. Submit it for the first subject only, as a test. When it’s done, show me the log and the fitted values. Do they look sensible for a contrast response function?</pre></div>
+      <p>The oldest rule of cluster work: never send two hundred jobs to find out they all crash on line 3.</p></li>
+    <li><b>Then everyone</b>
+      <div class="say"><pre class="prompt" data-title="Step 9: everyone">That looks right. Submit all the subjects as an array job. Tell me when they’ve finished and whether any failed. If one failed, read its log and tell me why before you fix anything.</pre></div>
+      <p>An array job is one work order for the same thing, eight times, side by side. Eight subjects take as long as one.</p></li>
+    <li><b>Gather, and bring back only the small stuff</b>
+      <div class="say"><pre class="prompt" data-title="Step 9: gather">Fill in my project name in summarize.qsub and submit it. When it’s done, copy just the summary table and the figure back here, into results/ and figures/. Show me the figure and read me the known-answer check.</pre></div>
+      <p>You should see two curves, the attended one shifted left, and a line saying how close the fits came to the truth.</p></li>
+    <li><b>Save a checkpoint</b>
+      <p>The scripts live in your folder and in git. The cluster holds a working copy and the heavy data. If the cluster copy vanished tomorrow, you’d lose nothing you couldn’t rerun.</p></li>
+  </ol>
+  <div class="have"><p><b>You now have</b>A complete, repeatable cluster analysis, start to figure. Mostly by saying “yes” and “show me”.</p><button class="tick" data-step="s9" aria-pressed="false">☐ Done</button></div>
+</section>
+
+<section id="s10">
+  <h2><span class="num">Step 10 · the point of all this</span>Your question</h2>
+  <p class="for">Now your data, where it already lives. Same four beats, and one new one at the front: Claude learns the lay of the land before it does anything.</p>
+  <div class="note warn"><b>First, the data question</b>What Claude reads passes through Anthropic’s servers, like any cloud service. De-identified derivatives are usually fine. Check your IRB protocol and BU’s guidance before it reads anything that could identify a participant, and say so in your <code>CLAUDE.md</code>.</div>
+  <ol class="steps">
+    <li><b>Survey</b>
+      <div class="say"><pre class="prompt" data-title="Step 10: survey">My data for <mark>[study]</mark> is on the SCC at <mark>[/projectnb/yourproject/…]</mark>. Survey it, read-only: the folder structure, how many subjects, the file types and sizes, and anything that’s inconsistent across subjects. Don’t copy data to this computer. Write what you find to notes/data-map.md here, and add the short version to CLAUDE.md.</pre></div>
+      <p>Correct the map where it’s wrong. You do this once; after that Claude knows where things are.</p></li>
+    <li><b>Plan</b>
+      <div class="say"><pre class="prompt" data-title="Step 10: plan">Here’s the analysis I want, in plain words: <mark>[for each subject, do this… then across subjects, compare that…]</mark>. Don’t write code yet. Give me a plan: which scripts, which jobs, roughly how long and how much memory, and where the outputs go. Tell me what you’re unsure about. Wait for my OK.</pre></div></li>
+    <li><b>One subject</b>
+      <div class="say"><pre class="prompt" data-title="Step 10: one subject">OK. Do one subject. Show me its output and a quick picture of it, then stop.</pre></div>
+      <p>Look hard here. This is the cheapest moment to be picky.</p></li>
+    <li><b>Prove it on a known answer</b>
+      <div class="say"><pre class="prompt" data-title="Step 10: known answer">Before we run everyone: simulate data where we know the true answer, run this same analysis on it, and show me that it recovers the truth. If it doesn’t, say so plainly.</pre></div></li>
+    <li><b>Everyone, then gather</b>
+      <div class="say"><pre class="prompt" data-title="Step 10: everyone">Run all subjects as an array job. When it’s done: which failed and why, then the group figure and the table behind it, copied back here. Save a checkpoint.</pre></div></li>
+  </ol>
+  <div class="have"><p><b>You now have</b>Your own analysis, on your own data, on the cluster, in a form you can rerun and hand to a student.</p><button class="tick" data-step="s10" aria-pressed="false">☐ Done</button></div>
+</section>
+
+<section id="rules">
+  <h2><span class="num">Worth taping to the wall</span>House rules</h2>
+  <p class="for">How to stay the scientist while something else does the typing.</p>
+  <ul class="rules">
+    <li><b>You check the answer</b>Claude is fast and fluent and sometimes wrong. A figure isn’t a finding until you’ve looked at the numbers behind it.</li>
+    <li><b>Known answers first</b>Before trusting an analysis on real data, run it on data where you know the truth.</li>
+    <li><b>One, then many</b>One subject, look, then everyone. On your laptop and on the cluster.</li>
+    <li><b>Originals are read-only</b>Work on copies. Write outputs somewhere new. Ask before anything is deleted or overwritten.</li>
+    <li><b>Passwords are yours</b>Never paste a password or a Duo code into Claude. You open the doors; it walks through.</li>
+    <li><b>Nothing identifying</b>No names, birth dates or raw headers in what Claude reads, in git, or online.</li>
+    <li><b>Save before big asks</b>A checkpoint costs two seconds and makes every experiment free.</li>
+    <li><b>A second pair of eyes</b>For anything that matters, open a fresh session and say: “Review this analysis for mistakes. Assume there is one.”</li>
+  </ul>
+</section>
+
+<section id="stuck">
+  <h2><span class="num">It will happen</span>When stuck</h2>
+  <p class="for">Being stuck is normal, and it’s usually one message from being unstuck.</p>
+  <table>
+    <tr><th>What you see</th><th>What to do</th></tr>
+    <tr><td>An error, any error</td><td>Paste it to Claude as it is. That’s the whole move. Errors are for it to read, not you.</td></tr>
+    <tr><td>It’s going in circles</td><td>Say “stop, go back to the last checkpoint”, then describe what you want differently, or smaller.</td></tr>
+    <tr><td>It did too much</td><td>“Undo that. Next time, tell me the plan first and wait.” Add that line to <code>CLAUDE.md</code> and it sticks.</td></tr>
+    <tr><td>You don’t understand a word</td><td>Ask. “What’s a branch, in one sentence, with an analogy?”</td></tr>
+    <tr><td>“SCC connection closed”</td><td>The door shut (overnight, or the laptop slept). Run <code>ssh -fN scc</code> again.</td></tr>
+    <tr><td>A job sits at <code>qw</code></td><td>It’s waiting in line. Normal. Ask Claude to check again in a few minutes.</td></tr>
+    <tr><td>A job vanished with no result</td><td>“Find the log for that job and tell me why it stopped.” Usually it ran out of time or memory; ask for more of whichever.</td></tr>
+    <tr><td>Something about the cluster itself</td><td>The SCC’s people are helpful and fast: <a href="mailto:help@scc.bu.edu">help@scc.bu.edu</a>. Have Claude draft the email with the job number in it.</td></tr>
+  </table>
+</section>
+
+<section id="kit">
+  <h2><span class="num">Take these with you</span>The kit</h2>
+  <p class="for">Everything the steps use, tested end to end. Take the lot, or one file at a time.</p>
+  <p><a class="btn big primary" href="vibin-kit.zip" download>Download vibin-kit.zip</a></p>
+  <table>
+    <tr><th>File</th><th>What it’s for</th></tr>
+    <tr><td><a href="VIBIN.md">VIBIN.md</a></td><td>This whole guide, written for Claude to read and lead you through. The short way.</td></tr>
+    <tr><td><a href="kit/PROMPTS.md">PROMPTS.md</a></td><td>Every prompt on this page, in order, in one file.</td></tr>
+    <tr><td><a href="kit/CLAUDE-starter.md">CLAUDE-starter.md</a></td><td>Ground rules for Claude in your folder. Fill in the blanks, save as <code>CLAUDE.md</code>.</td></tr>
+    <tr><td><a href="kit/first-demo.html">first-demo.html</a></td><td>The Gabor page from step 2, if you want to read how one is made.</td></tr>
+    <tr><td><a href="kit/ssh_config_scc">ssh_config_scc</a></td><td>The door: the lines that go in <code>~/.ssh/config</code>.</td></tr>
+    <tr><td><a href="kit/scc-door.sh">scc-door.sh</a></td><td>Open, check or close the door with one word.</td></tr>
+    <tr><td><a href="kit/hello.qsub">hello.qsub</a></td><td>The first batch job. It says hello.</td></tr>
+    <tr><td><a href="kit/make_toy_data.py">make_toy_data.py</a></td><td>Makes the practice data, and writes down the true answer.</td></tr>
+    <tr><td><a href="kit/analyze_subject.py">analyze_subject.py</a></td><td>Fits a contrast response function to one subject.</td></tr>
+    <tr><td><a href="kit/analysis.qsub">analysis.qsub</a></td><td>The array job: one task per subject. The template for your own.</td></tr>
+    <tr><td><a href="kit/summarize.qsub">summarize.qsub</a></td><td>Runs the summary as one short job.</td></tr>
+    <tr><td><a href="kit/summarize.py">summarize.py</a></td><td>Gathers the fits into a table, a figure and a known-answer check.</td></tr>
+  </table>
+</section>
+
+<section id="words">
+  <h2><span class="num">Fifteen of them</span>Words</h2>
+  <p class="for">The jargon, each in a sentence. You don’t need to memorize any of it.</p>
+  <dl class="words">
+    <div><dt>Terminal</dt><dd>A window where you type commands instead of clicking. Claude types there for you.</dd></div>
+    <div><dt>Repo</dt><dd>A project folder that remembers its own history. Short for repository.</dd></div>
+    <div><dt>Git</dt><dd>The thing that keeps the history. Save points.</dd></div>
+    <div><dt>Commit</dt><dd>One save point, with a note. “Checkpoint” in this guide.</dd></div>
+    <div><dt>GitHub</dt><dd>A website that keeps a copy of your repo off your laptop.</dd></div>
+    <div><dt>Push / pull</dt><dd>Send your save points up to GitHub / bring the latest down.</dd></div>
+    <div><dt>Branch</dt><dd>A parallel draft, so you can try something without touching the good copy.</dd></div>
+    <div><dt>Pages</dt><dd>GitHub showing a repo as a website.</dd></div>
+    <div><dt>Script</dt><dd>A file of instructions the computer can rerun. The recipe card.</dd></div>
+    <div><dt>SSH</dt><dd>A secure line from your computer to another one. The door.</dd></div>
+    <div><dt>Login node</dt><dd>The cluster’s front desk. Look around, drop off work, don’t compute.</dd></div>
+    <div><dt>Batch job</dt><dd>A work order for the cluster: what to run, how long, how big.</dd></div>
+    <div><dt>qsub / qstat</dt><dd>Hand in a work order / see where it is in line.</dd></div>
+    <div><dt>Array job</dt><dd>One work order run many times at once, say once per subject.</dd></div>
+    <div><dt>Module</dt><dd>Software already installed on the cluster. <code>module load python3</code> switches it on.</dd></div>
+  </dl>
+</section>
+
+</article>
+</div>
+</main>
+
+<footer class="wrap">
+  <span>vibin’ · made by Sam Ling, with Claude · <a href="https://linglab.org/projects/">linglab.org</a></span>
+  <span>Free to copy, change and pass on. <a href="https://github.com/samuelling/vibin">Source</a></span>
+</footer>
+
+<script src="site/site.js"></script>
+</body>
+</html>

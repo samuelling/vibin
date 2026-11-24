@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabor patch</title>
+<style>
+  /* One file, no libraries: the kind of page step 2 gets you. */
+  html, body { margin: 0; height: 100%; }
+  body { background: #808080; color: #111; font: 15px/1.4 "Courier New", Courier, monospace; display: grid; grid-template-rows: 1fr auto; }
+  .stage { display: grid; place-items: center; min-height: 0; padding: 12px; }
+  canvas { width: min(100%, 300px); aspect-ratio: 1; image-rendering: auto; }
+  .panel { background: #f4f1e9; padding: 10px 14px 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 6px 18px; }
+  label { display: grid; grid-template-columns: 1fr auto; font-weight: 700; font-size: 13px; }
+  label output { font-weight: 400; }
+  input[type=range] { grid-column: 1 / -1; width: 100%; accent-color: #5B34D6; min-height: 26px; }
+  .row { display: flex; gap: 8px; align-items: center; font-weight: 700; font-size: 13px; }
+  .row input { width: 18px; height: 18px; accent-color: #5B34D6; }
+</style>
+</head>
+<body>
+<div class="stage"><canvas id="c" width="256" height="256" aria-label="A Gabor patch: a striped blob on gray"></canvas></div>
+<div class="panel">
+  <label>Contrast <output id="o-contrast"></output><input id="contrast" type="range" min="0" max="1" step="0.01" value="0.8"></label>
+  <label>Stripes (cycles) <output id="o-sf"></output><input id="sf" type="range" min="1" max="16" step="0.5" value="5"></label>
+  <label>Tilt (deg) <output id="o-ori"></output><input id="ori" type="range" min="0" max="180" step="1" value="45"></label>
+  <label>Size <output id="o-size"></output><input id="size" type="range" min="0.06" max="0.3" step="0.01" value="0.16"></label>
+  <div class="row"><input id="drift" type="checkbox" checked><label for="drift" style="display:inline">Drift</label></div>
+</div>
+<script>
+(function () {
+  'use strict';
+  var cv = document.getElementById('c'), ctx = cv.getContext('2d'), N = cv.width;
+  var img = ctx.createImageData(N, N), phase = 0, last = 0;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var el = function (id) { return document.getElementById(id); };
+  if (still) el('drift').checked = false;
+
+  function draw() {
+    var contrast = +el('contrast').value, sf = +el('sf').value, ori = +el('ori').value * Math.PI / 180, sigma = +el('size').value;
+    el('o-contrast').textContent = Math.round(contrast * 100) + '%';
+    el('o-sf').textContent = sf; el('o-ori').textContent = Math.round(+el('ori').value); el('o-size').textContent = sigma.toFixed(2);
+    var cos = Math.cos(ori), sin = Math.sin(ori), d = img.data, i = 0;
+    for (var y = 0; y < N; y++) {
+      var v = y / N - 0.5;
+      for (var x = 0; x < N; x++) {
+        var u = x / N - 0.5;
+        var wave = Math.cos(2 * Math.PI * sf * (u * cos + v * sin) + phase);   // the stripes
+        var blob = Math.exp(-(u * u + v * v) / (2 * sigma * sigma));           // the soft window
+        var g = 128 + 127 * contrast * wave * blob;                            // around mid-gray
+        d[i++] = g; d[i++] = g; d[i++] = g; d[i++] = 255;
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+  }
+  function tick(t) {
+    if (el('drift').checked) { phase -= ((t - last) / 1000) * 2 * Math.PI * 1.5; draw(); }
+    last = t; requestAnimationFrame(tick);
+  }
+  ['contrast', 'sf', 'ori', 'size', 'drift'].forEach(function (id) { el(id).addEventListener('input', draw); });
+  draw(); requestAnimationFrame(function (t) { last = t; requestAnimationFrame(tick); });
+})();
+</script>
+</body>
+</html>

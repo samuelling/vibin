@@ -1,0 +1,34 @@
+#!/bin/bash -l
+# One job, many subjects: an "array job". The scheduler runs this script once
+# per task, side by side, and tells each copy which task it is ($SGE_TASK_ID).
+# Task 1 takes the first subject file, task 2 the second, and so on.
+#
+#   mkdir -p logs results                 the folders must exist first
+#   qsub -t 1-8 analysis.qsub             8 subjects (count your files)
+#   qsub -t 1 analysis.qsub               or just the first one, as a test
+#   qstat -u $USER                        watch them
+#
+# To use it on your own data: change the project, the file pattern, and the
+# python line. Ask for more time (-l h_rt), cores (-pe omp 4) or memory
+# (-l mem_per_core=8G) only when a job needs it.
+
+#$ -P YOUR_PROJECT         # the SCC project to charge. Change this.
+#$ -N vibin_fit
+#$ -l h_rt=00:15:00        # per task
+#$ -j y
+#$ -o logs/                # one log file per task, in logs/
+#$ -cwd
+
+module load python3
+
+FILES=(data/sub-*.csv)
+if [ -z "$SGE_TASK_ID" ] || [ "$SGE_TASK_ID" = "undefined" ]; then
+  echo "Submit this as an array job: qsub -t 1-${#FILES[@]} analysis.qsub"; exit 1
+fi
+FILE=${FILES[$((SGE_TASK_ID - 1))]}
+if [ ! -f "$FILE" ]; then
+  echo "Task $SGE_TASK_ID has no file (found ${#FILES[@]} files)"; exit 1
+fi
+
+echo "Task $SGE_TASK_ID on $(hostname): $FILE"
+python analyze_subject.py "$FILE" results/

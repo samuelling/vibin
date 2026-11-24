@@ -1,0 +1,16 @@
+# Add this block to the file ~/.ssh/config on your own computer
+# (Mac or Linux; on Windows, do it inside WSL).
+# Change YOUR_BU_LOGIN to your BU login name. Then "ssh scc" is all you type.
+#
+# The Control lines keep one connection open and let everything else ride on
+# it: you give your password and approve Duo once, and later commands go
+# straight through for 12 hours.
+
+Host scc
+    HostName scc1.bu.edu
+    User YOUR_BU_LOGIN
+    ControlMaster auto
+    ControlPath ~/.ssh/cm-%r@%h-%p
+    ControlPersist 12h
+    ServerAliveInterval 60
+    ServerAliveCountMax 5

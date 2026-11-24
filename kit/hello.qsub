@@ -1,0 +1,20 @@
+#!/bin/bash -l
+# Your first batch job on BU's SCC. It only says hello.
+#
+#   qsub hello.qsub        hand the job to the scheduler
+#   qstat -u $USER         see it waiting (qw) or running (r); gone means done
+#   cat hello_vibin.o*     read what it printed
+#
+# Lines that start with "#$" are notes to the scheduler, not comments.
+
+#$ -P YOUR_PROJECT         # the SCC project to charge. Change this.
+#$ -N hello_vibin          # a name for the job
+#$ -l h_rt=00:05:00        # stop it after 5 minutes, whatever happens
+#$ -j y                    # put errors in the same file as the output
+#$ -cwd                    # run in the folder I submitted from
+
+echo "Hello from $(hostname) at $(date)"
+echo "I am job $JOB_ID, running as $USER, in $(pwd)"
+
+module load python3
+python -c "import sys; print('Python', sys.version.split()[0], 'says hi too')"

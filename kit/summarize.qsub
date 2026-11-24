@@ -1,0 +1,14 @@
+#!/bin/bash -l
+# Gather the fits into one table and one figure. Run it after the array job.
+#
+#   qsub summarize.qsub
+
+#$ -P YOUR_PROJECT         # the SCC project to charge. Change this.
+#$ -N vibin_sum
+#$ -l h_rt=00:10:00
+#$ -j y
+#$ -o logs/
+#$ -cwd
+
+module load python3
+python summarize.py results/ figures/
