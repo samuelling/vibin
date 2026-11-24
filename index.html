@@ -90,6 +90,7 @@
     <li><a href="#s9"><span class="n">9</span>A whole analysis</a></li>
     <li><a href="#s10"><span class="n">10</span>Your question</a></li>
     <li class="gap" aria-hidden="true"></li>
+    <li><a href="#glass"><span class="n">·</span>No black boxes</a></li>
     <li><a href="#rules"><span class="n">·</span>House rules</a></li>
     <li><a href="#stuck"><span class="n">·</span>When stuck</a></li>
     <li><a href="#kit"><span class="n">·</span>The kit</a></li>
@@ -207,8 +208,8 @@ claude</pre></div>
       <div class="say"><pre class="prompt" data-title="Step 6: look at the data">There’s a file in data/. Don’t change it. Look at it and tell me what’s in it: the columns, how many rows, and anything odd, like missing values or ranges that don’t make sense. Then stop.</pre></div>
       <p>Read what it says. This is where you catch that column 3 is in milliseconds, not seconds.</p></li>
     <li><b>Ask for a script, not an answer</b>
-      <div class="say"><pre class="prompt" data-title="Step 6: first analysis">Write a Python script that reads that file and plots <mark>[what you want: say, mean response for each condition, with error bars across subjects]</mark>. Save the figure in figures/. Print the numbers behind the figure so I can check them. Then run it and show me the figure.</pre></div>
-      <p>A script is a recipe card: anyone can run it again and get the same figure. An answer in the chat is a meal you can’t remake.</p></li>
+      <div class="say"><pre class="prompt" data-title="Step 6: first analysis">Write a script in <mark>[Python, MATLAB or R: whichever you read best]</mark>, heavily commented, that reads that file and plots <mark>[what you want: say, mean response for each condition, with error bars across subjects]</mark>. Save the figure in figures/. Print the numbers behind the figure so I can check them. Then run it and show me the figure.</pre></div>
+      <p>A script is a recipe card: anyone can run it again and get the same figure. An answer in the chat is a meal you can’t remake. And it’s a recipe you should be able to read: if you can’t, see <a href="#glass">No black boxes</a>.</p></li>
     <li><b>Check it like a reviewer</b>
       <div class="say"><pre class="prompt" data-title="Step 6: check it">What assumptions did you make in that analysis? List them. Then tell me one way I could check the result by hand.</pre></div></li>
     <li><b>Save a checkpoint</b>
@@ -293,6 +294,26 @@ claude</pre></div>
   <div class="have"><p><b>You now have</b>Your own analysis, on your own data, on the cluster, in a form you can rerun and hand to a student.</p><button class="tick" data-step="s10" aria-pressed="false">☐ Done</button></div>
 </section>
 
+<section id="glass">
+  <h2><span class="num">If it feels like trusting a stranger</span>No black boxes</h2>
+  <p class="for">Uneasy that you can’t read what Claude wrote? Good. That’s the right instinct, and there’s a fix.</p>
+  <p><b>Claude’s code is a methods section, and you’re entitled to it in a language you read.</b> Nothing lives inside Claude. Every analysis is a file in your folder. You can open it, print it, step through it line by line, or hand it to a student, with Claude nowhere in the room.</p>
+  <ul class="rules">
+    <li><b>Your language</b>Python is only Claude’s habit. Say MATLAB, or R, or whatever you’ve read for twenty years, and it writes that. If the code already exists, it can port it: the same analysis, rewritten.</li>
+    <li><b>Comments like a methods section</b>Ask for heavy comments: before each step, what it does and why, in plain words, for someone who knows the science and not the code.</li>
+    <li><b>Same numbers, or it doesn’t count</b>A port is a translation, and translations drift. Have Claude run both versions on the same data and show you the numbers side by side.</li>
+    <li><b>Take it away and poke it</b>Open the file yourself. Step through it. Change a number and watch what moves. That’s the check nobody can do for you.</li>
+  </ul>
+  <div class="say"><pre class="prompt" data-title="No black boxes: your language">From now on, write my analysis code in <mark>[MATLAB / R / Python]</mark>, and comment it heavily: before each step, a plain-words note on what it does and why, written for someone who knows the science but not the code. Put that in CLAUDE.md so it sticks.</pre></div>
+  <div class="say"><pre class="prompt" data-title="No black boxes: port it">Port <mark>[the script]</mark> to <mark>[MATLAB]</mark>, heavily commented, and keep the original. Then run both on the same data and show me the numbers side by side. They should match. If they don’t, tell me why before you change anything.</pre></div>
+  <p class="then">And two for reading what’s already there:</p>
+  <ul class="more">
+    <li data-title="No black boxes: read it">Walk me through this script a few lines at a time. For each part: what it does, and how the result would change if it were wrong.</li>
+    <li data-title="No black boxes: read it">Put the whole analysis in one heavily commented file I can open in <mark>[MATLAB]</mark> and step through myself, top to bottom.</li>
+  </ul>
+  <div class="note"><b>No MATLAB on your laptop?</b>Claude can still write it. To run it, MATLAB has to be somewhere Claude can reach: your laptop, or the SCC, which has it. Until one of you has run it, a port is a draft.</div>
+</section>
+
 <section id="rules">
   <h2><span class="num">Worth taping to the wall</span>House rules</h2>
   <p class="for">How to stay the scientist while something else does the typing.</p>
@@ -300,6 +321,7 @@ claude</pre></div>
     <li><b>You check the answer</b>Claude is fast and fluent and sometimes wrong. A figure isn’t a finding until you’ve looked at the numbers behind it.</li>
     <li><b>Known answers first</b>Before trusting an analysis on real data, run it on data where you know the truth.</li>
     <li><b>One, then many</b>One subject, look, then everyone. On your laptop and on the cluster.</li>
+    <li><b>Code you can read</b>In your language, heavily commented. If you can’t follow a script, ask until you can, or have it ported.</li>
     <li><b>Originals are read-only</b>Work on copies. Write outputs somewhere new. Ask before anything is deleted or overwritten.</li>
     <li><b>Passwords are yours</b>Never paste a password or a Duo code into Claude. You open the doors; it walks through.</li>
     <li><b>Nothing identifying</b>No names, birth dates or raw headers in what Claude reads, in git, or online.</li>
@@ -346,7 +368,7 @@ claude</pre></div>
 </section>
 
 <section id="words">
-  <h2><span class="num">Fifteen of them</span>Words</h2>
+  <h2><span class="num">Sixteen of them</span>Words</h2>
   <p class="for">The jargon, each in a sentence. You don’t need to memorize any of it.</p>
   <dl class="words">
     <div><dt>Terminal</dt><dd>A window where you type commands instead of clicking. Claude types there for you.</dd></div>
@@ -358,6 +380,7 @@ claude</pre></div>
     <div><dt>Branch</dt><dd>A parallel draft, so you can try something without touching the good copy.</dd></div>
     <div><dt>Pages</dt><dd>GitHub showing a repo as a website.</dd></div>
     <div><dt>Script</dt><dd>A file of instructions the computer can rerun. The recipe card.</dd></div>
+    <div><dt>Port</dt><dd>The same analysis rewritten in another language. A translation: check it says the same thing.</dd></div>
     <div><dt>SSH</dt><dd>A secure line from your computer to another one. The door.</dd></div>
     <div><dt>Login node</dt><dd>The cluster’s front desk. Look around, drop off work, don’t compute.</dd></div>
     <div><dt>Batch job</dt><dd>A work order for the cluster: what to run, how long, how big.</dd></div>

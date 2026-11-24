@@ -60,7 +60,7 @@ Each block is one message. Send it, look at what comes back, then go on.
 
 ## Step 6: first analysis
 
-> Write a Python script that reads that file and plots [what you want: say, mean response for each condition, with error bars across subjects]. Save the figure in figures/. Print the numbers behind the figure so I can check them. Then run it and show me the figure.
+> Write a script in [Python, MATLAB or R: whichever you read best], heavily commented, that reads that file and plots [what you want: say, mean response for each condition, with error bars across subjects]. Save the figure in figures/. Print the numbers behind the figure so I can check them. Then run it and show me the figure.
 
 
 ## Step 6: check it
@@ -131,3 +131,20 @@ Each block is one message. Send it, look at what comes back, then go on.
 ## Step 10: everyone
 
 > Run all subjects as an array job. When it’s done: which failed and why, then the group figure and the table behind it, copied back here. Save a checkpoint.
+
+
+## No black boxes: your language
+
+> From now on, write my analysis code in [MATLAB / R / Python], and comment it heavily: before each step, a plain-words note on what it does and why, written for someone who knows the science but not the code. Put that in CLAUDE.md so it sticks.
+
+
+## No black boxes: port it
+
+> Port [the script] to [MATLAB], heavily commented, and keep the original. Then run both on the same data and show me the numbers side by side. They should match. If they don’t, tell me why before you change anything.
+
+
+## No black boxes: read it
+
+> Walk me through this script a few lines at a time. For each part: what it does, and how the result would change if it were wrong.
+
+> Put the whole analysis in one heavily commented file I can open in [MATLAB] and step through myself, top to bottom.

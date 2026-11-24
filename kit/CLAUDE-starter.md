@@ -12,7 +12,9 @@
 
 ## This project
 - What it is: FILL IN (one or two sentences)
-- Language: Python unless I say otherwise.
+- Language: FILL IN (the one I read best: MATLAB, Python or R). Write analysis code in it.
+- Comment heavily: before each step, a plain-words note on what it does and why, for a reader who knows the science but not the code.
+- If you port code from one language to another, keep the original, run both on the same data, and show me that the numbers match.
 - Analyses are scripts in this folder, never one-off commands, so every figure can be made again.
 - Figures go in `figures/`, tables in `results/`, notes in `notes/`.
 
