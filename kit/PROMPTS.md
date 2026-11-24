@@ -1,4 +1,4 @@
-# vibin’: every prompt, in order
+# vibin’ for dummies (and PIs): every prompt, in order
 
 Things to say to Claude, from https://linglab.org/vibin/. Fill in anything in [brackets].
 Each block is one message. Send it, look at what comes back, then go on.

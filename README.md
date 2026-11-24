@@ -1,4 +1,4 @@
-# vibin’
+# vibin’ for dummies (and PIs)
 
 You describe it. Claude types it. A step-by-step way into coding with Claude, for scientists who have never done it.
 

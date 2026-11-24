@@ -35,6 +35,10 @@ mark { background: color-mix(in srgb, var(--lime) 70%, transparent); color: inhe
 .logo .ink { position: relative; z-index: 1; display: block; }
 .logo .mis { position: absolute; left: 0; top: 0; color: var(--lime); transform: translate(.035em, .03em) rotate(-.5deg); transform-origin: left top; pointer-events: none; z-index: 0; }
 .logo .apos { color: var(--grape); }
+.logo .tag { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: .1em .38em; margin-top: .3em;
+  font: 900 clamp(1.5rem, 6.2vw, 3.6rem)/.95 var(--display); letter-spacing: .02em; }
+.logo .dum { text-shadow: 3px 3px 0 var(--pop); }
+.logo .pis { font: 700 .56em/1 var(--type); letter-spacing: 0; text-transform: none; background: var(--lime); color: var(--on-lime); padding: .42em .55em .3em; transform: rotate(-2.5deg); }
 .logo i { font-style: normal; display: inline-block; animation: bob 2.6s ease-in-out infinite; animation-delay: calc(var(--k) * -0.26s); }
 @keyframes bob { 0%, 100% { transform: translateY(.022em); } 50% { transform: translateY(-.022em); } }
 @media (prefers-reduced-motion: reduce) { .logo i { animation: none; } }

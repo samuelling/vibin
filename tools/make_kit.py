@@ -30,7 +30,7 @@ def prompts():
 
 
 def main():
-    body = ["# vibin’: every prompt, in order\n",
+    body = ["# vibin’ for dummies (and PIs): every prompt, in order\n",
             "Things to say to Claude, from https://linglab.org/vibin/. Fill in anything in [brackets].",
             "Each block is one message. Send it, look at what comes back, then go on.\n"] + prompts()
     with open(os.path.join(ROOT, "kit", "PROMPTS.md"), "w", encoding="utf-8") as f:
